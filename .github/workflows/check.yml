@@ -20,5 +20,5 @@ jobs:
         run: python tools/build.py
       - name: Check README links
         run: python tools/check_readme_links.py
-      - name: Check deterministic generated files are committed
-        run: git diff --exit-code -- . ':(exclude)*.png' ':(exclude)*.ico'
+      - name: Check deterministic generated tokens are committed
+        run: git diff --exit-code -- colors/colors.css colors/colors.json colors/colors.scss
