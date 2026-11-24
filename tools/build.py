@@ -137,18 +137,8 @@ def export_logo(folder, name, svg_text):
 
 # ---------------------------------------------------------------------------
 def font(size, weight="Regular"):
-    for p in (
-        f"/usr/share/fonts/opentype/inter/Inter-{weight}.otf",
-        f"/Library/Fonts/Inter-{weight}.otf",
-        f"C:/Windows/Fonts/Inter-{weight}.ttf",
-        "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
-        "DejaVuSans.ttf",
-        "Arial.ttf",
-    ):
-        try:
-            return ImageFont.truetype(p, size)
-        except OSError:
-            pass
+    # Use Pillow's bundled font so generated documentation images are stable
+    # across Windows, macOS and Linux CI runners.
     return ImageFont.load_default(size)
 
 
