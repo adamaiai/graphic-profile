@@ -1,0 +1,6 @@
+# Generator dependencies (python tools/build.py). cairosvg needs the Cairo C library
+# (macOS: brew install cairo · Debian/Ubuntu: apt install libcairo2).
+numpy>=1.26
+shapely>=2.0
+cairosvg>=2.7
+pillow>=10.1

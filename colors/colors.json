@@ -1,0 +1,29 @@
+{
+  "color": {
+    "ink": {
+      "$type": "color",
+      "$value": "#000000",
+      "$description": "Logos and text on light backgrounds"
+    },
+    "night": {
+      "$type": "color",
+      "$value": "#111111",
+      "$description": "Dark backgrounds, app icon"
+    },
+    "fog": {
+      "$type": "color",
+      "$value": "#F4F4F2",
+      "$description": "Light panels and tiles"
+    },
+    "paper": {
+      "$type": "color",
+      "$value": "#FFFFFF",
+      "$description": "Logos and text on dark backgrounds"
+    },
+    "signal-yellow": {
+      "$type": "color",
+      "$value": "#F9A800",
+      "$description": "Accent only: the i-dot, highlights, status"
+    }
+  }
+}
