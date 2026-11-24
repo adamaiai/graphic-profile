@@ -13,8 +13,7 @@ First release.
   dot aligned with the top of the d. Variants: primary, reversed, black, white.
 - **adamai mark**: the "ad" on its own; app icons (dark/light, 16–512 px), `favicon.ico`,
   adaptive `favicon.svg`, `apple-touch-icon.png`.
-- **cosa wordmark**: c, o, symmetric s and a in the same construction, with optical spacing.
-  Monospace variant with a wider s.
+- **cosa wordmark**: c, o, symmetric s and a in the same construction, with monospace spacing.
 - **Colour palette**: Signal Yellow `#F9A800` (RGB 249 168 0) plus Ink, Night, Fog and Paper;
   design tokens as JSON, CSS and SCSS.
 - **Guidelines**: clear space, minimum sizes, backgrounds, misuse, typography.

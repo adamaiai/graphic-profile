@@ -170,12 +170,11 @@ def build_logos():
         out[name] = svg([(mark, fg)], "adamai")
         export_logo("logos/adamai-mark", name, out[name])
 
-    for mono in (False, True):
-        geom = g.cosa(mono=mono)
-        for colour, fg in (("black", ink), ("white", paper)):
-            name = f"cosa{'-mono' if mono else ''}-{colour}"
-            out[name] = svg([(geom, fg)], "cosa")
-            export_logo("logos/cosa", name, out[name])
+    geom = g.cosa()
+    for colour, fg in (("black", ink), ("white", paper)):
+        name = f"cosa-{colour}"
+        out[name] = svg([(geom, fg)], "cosa")
+        export_logo("logos/cosa", name, out[name])
     return out, letters, dot, mark
 
 

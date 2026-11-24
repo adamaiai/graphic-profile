@@ -35,13 +35,10 @@ I_GAP = 14.0  # gap between the i stem and its square dot
 
 # cosa
 C_OPEN = 42.0  # opening of the c: angle (deg) of each end from the horizontal
-S_HALF = 84.0  # half-width of the s bowls (104 in the monospace variant)
+S_HALF = 104.0  # half-width of the s bowls
 S_TENSION = 70.0  # tension of the s spine
 S_END = 0.0  # s ends cut straight across at the widest point of each bowl (deg offset)
-SPACING = 100.0  # optical spacing: average white between neighbouring letters
-SPACING_DEPTH = 50.0  # how far into an open side (the c) white still counts
-MONO_CELL = 340.0  # cell width for the monospace cosa
-MONO_S_HALF = 104.0
+CELL = 340.0  # equal letter cell width for cosa
 
 
 def _arc(c, rad, a0, a1, n=240):
@@ -195,49 +192,20 @@ def _letter_s(xl, half=S_HALF):
     return shape, cx + a + W
 
 
-def _profile(g, side, ys):
-    xmin, _, xmax, _ = g.bounds
-    out = []
-    for y in ys:
-        hit = g.intersection(box(-1e4, y - 0.5, 1e4, y + 0.5))
-        if hit.is_empty:
-            out.append(
-                xmax - SPACING_DEPTH if side == "right" else xmin + SPACING_DEPTH
-            )
-        else:
-            hb = hit.bounds
-            out.append(
-                max(hb[2], xmax - SPACING_DEPTH)
-                if side == "right"
-                else min(hb[0], xmin + SPACING_DEPTH)
-            )
-    return np.array(out)
-
-
-def cosa(mono=False):
-    """The cosa wordmark. Default: optical spacing. mono=True: every letter centred in an equal cell."""
+def cosa():
+    """The cosa wordmark: every letter is centred in an equal cell."""
     glyphs = [
         _letter_c(0)[0],
         _letter_o(0)[0],
-        _letter_s(0, MONO_S_HALF if mono else S_HALF)[0],
+        _letter_s(0)[0],
         _letter_a(0)[0],
     ]
     parts = []
-    if mono:
-        for i, g in enumerate(glyphs):
-            xmin, _, xmax, _ = g.bounds
-            parts.append(
-                affinity.translate(
-                    g, C[0] + i * MONO_CELL + MONO_CELL / 2 - (xmin + xmax) / 2, 0
-                )
+    for i, g in enumerate(glyphs):
+        xmin, _, xmax, _ = g.bounds
+        parts.append(
+            affinity.translate(
+                g, C[0] + i * CELL + CELL / 2 - (xmin + xmax) / 2, 0
             )
-    else:
-        ys = np.linspace(TOP - W + 1, BASE + W - 1, 300)
-        offset = C[0] - glyphs[0].bounds[0]
-        for i, g in enumerate(glyphs):
-            if i:
-                offset += SPACING - np.mean(
-                    _profile(g, "left", ys) - _profile(glyphs[i - 1], "right", ys)
-                )
-            parts.append(affinity.translate(g, offset, 0))
+        )
     return unary_union(parts).simplify(0.05)

@@ -27,7 +27,7 @@ adamai-brand/
 ├── logos/
 │   ├── adamai/        svg/  png/       adamai-primary · -reversed · -black · -white
 │   ├── adamai-mark/   svg/  png/  icons/   mark, app icons, favicon.ico/.svg, apple-touch-icon
-│   └── cosa/          svg/  png/       cosa-black · -white · cosa-mono-black · -white
+│   └── cosa/          svg/  png/       cosa-black · -white
 ├── colors/            palette.png  colors.json  colors.css  colors.scss
 ├── docs/              overview, clear space, minimum size, misuse, history/
 ├── tools/             geometry.py  build.py
@@ -69,12 +69,11 @@ the brand is already established in context (social avatars, app icons, browser 
 
 Built from exactly the same stroke, letter height and round letters as adamai, so the two read as
 one family. The **s** is point-symmetric and its ends are cut straight at the widest point of each
-bowl.
+bowl. Every letter sits in an equal-width cell, giving the wordmark a monospace construction.
 
 | Variant | Spacing | File |
 |---|---|---|
-| `cosa-black` / `cosa-white` | Optical (each pair has the same amount of white) — **the default** | |
-| `cosa-mono-black` / `cosa-mono-white` | Monospace (every letter in an equal cell, wider s) — technical contexts, e.g. code, CLI, docs | |
+| `cosa-black` / `cosa-white` | Monospace (every letter in an equal cell) | |
 
 ### Formats
 
@@ -155,7 +154,7 @@ shares their round, monoline character:
 
 - **Headings:** [Jost](https://fonts.google.com/specimen/Jost) (open source, SIL OFL) — Futura-like geometry.
 - **Body and UI:** [Inter](https://rsms.me/inter/) (open source, SIL OFL).
-- **Code:** any monospace; the monospace cosa variant pairs well with it.
+- **Code:** any monospace; the cosa wordmark pairs well with it.
 
 In running text write the names in lower case: adamai, cosa.
 
