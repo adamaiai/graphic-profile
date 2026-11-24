@@ -204,8 +204,6 @@ def cosa():
     for i, g in enumerate(glyphs):
         xmin, _, xmax, _ = g.bounds
         parts.append(
-            affinity.translate(
-                g, C[0] + i * CELL + CELL / 2 - (xmin + xmax) / 2, 0
-            )
+            affinity.translate(g, C[0] + i * CELL + CELL / 2 - (xmin + xmax) / 2, 0)
         )
     return unary_union(parts).simplify(0.05)

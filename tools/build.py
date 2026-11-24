@@ -83,6 +83,7 @@ def _path(geom):
         return (
             "M" + " L".join(f"{x:.1f},{y:.1f}" for x, y in list(rr.coords)[:-1]) + "Z"
         )
+
     polys = geom.geoms if hasattr(geom, "geoms") else [geom]
     return " ".join(
         ring(p.exterior) + "".join(ring(i) for i in p.interiors) for p in polys
@@ -244,7 +245,7 @@ def build_colors():
     d = ImageDraw.Draw(im)
     d.text(
         (80 * S, 70 * S),
-        "adamai — colour palette",
+        "adamai - colour palette",
         fill="#000",
         font=font(44 * S, "SemiBold"),
     )
@@ -282,7 +283,7 @@ def build_colors():
         )
     d.text(
         (900 * S, y0 + 120 * S),
-        "Accent only — never for letters.\nUse it for the i-dot, highlights\nand status. Max ~5 % of a surface.",
+        "Accent only - never for letters.\nUse it for the i-dot, highlights\nand status. Max ~5 % of a surface.",
         fill="#000",
         font=font(24 * S),
         spacing=10 * S,

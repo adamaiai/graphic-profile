@@ -73,7 +73,8 @@ bowl. Every letter sits in an equal-width cell, giving the wordmark a monospace 
 
 | Variant | Spacing | File |
 |---|---|---|
-| `cosa-black` / `cosa-white` | Monospace (every letter in an equal cell) | |
+| `cosa-black` | Monospace (every letter in an equal cell) | [`logos/cosa/svg/cosa-black.svg`](logos/cosa/svg/cosa-black.svg) |
+| `cosa-white` | Monospace (every letter in an equal cell) | [`logos/cosa/svg/cosa-white.svg`](logos/cosa/svg/cosa-white.svg) |
 
 ### Formats
 
@@ -179,7 +180,7 @@ line has no kinks. All stem ends are cut square to the stroke.
 
 ## Rebuilding
 
-### macOS/Linx
+### macOS/Linux
 ```sh
 python -m venv .venv
 source .venv/bin/activate
@@ -202,10 +203,10 @@ deterministic, so an unchanged geometry produces byte-identical SVGs.
 
 The profile follows [semantic versioning](https://semver.org): **major** for a changed logo,
 **minor** for new variants or assets, **patch** for fixes that don't change any logo. See
-[CHANGELOG.md](CHANGELOG.md). Tag releases in git (`v1.0.0`).
+[CHANGELOG.md](CHANGELOG.md). Tag releases in git (`1.0.0`).
 
 The design exploration that led to 1.0 is summarised in
-[`docs/history/adamai-evolution.png`](docs/history/adamai-evolution.png).
+[`docs/history/logo-evolution.png`](docs/history/logo-evolution.png).
 
 ## Licence
 
