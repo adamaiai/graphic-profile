@@ -180,9 +180,19 @@ line has no kinks. All stem ends are cut square to the stroke.
 
 ## Rebuilding
 
+### macOS/Linx
 ```sh
-pip install -r requirements.txt     # numpy, shapely, cairosvg, pillow (cairosvg needs the Cairo library)
-make                                 # or: python tools/build.py
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+python tools/build.py        # or: make PYTHON=.venv/bin/python
+```
+### Windows, powershell
+```sh
+py -m venv .venv
+.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+python tools\build.py
 ```
 
 Change a constant in [`tools/geometry.py`](tools/geometry.py) (stroke, spacing, dot gap …) or a
